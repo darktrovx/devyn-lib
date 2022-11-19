@@ -231,3 +231,7 @@ end
 function Lib.Natives.GetPedCurrentHeldWeapon(ped)
     return Citizen.InvokeNative(0x8425C5F057012DAB, ped)
 end
+
+function Lib.Natives.GetWaterMapZoneAtCoords(x, y, z)
+    return Citizen.InvokeNative(0x5BA7A68A346A5A91, x, y, z)
+end

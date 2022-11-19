@@ -67,7 +67,9 @@ CreateThread(function()
         end
 
         local ped = PlayerPedId()
+		Lib.Player.ped = ped
         local id = PlayerId()
+		Lib.Player.id = id
 
         -- Vehicles
         if not Lib.Player.inVehicle and not IsPlayerDead(id) then
