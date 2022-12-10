@@ -32,7 +32,7 @@ CreateThread(function()
                     AddKeyCooldown(i)
                 end
             else
-                if IsDisabledControlPressed(0, KEY_EVENTS[i].key) and IsInputDisabled(0) then
+                if not KEY_EVENTS[i].cooldown and IsDisabledControlJustReleased(0, KEY_EVENTS[i].key) and IsInputDisabled(0) then
                     ExecuteCommand(KEY_EVENTS[i].command)
                     AddKeyCooldown(i)
                 end
@@ -45,3 +45,9 @@ CreateThread(function()
         Wait(0)
     end
 end)
+
+-- RegisterCommand("keys", function()
+--     for k,v in pairs(KEY_EVENTS) do
+--         print(k, v.key, v.command, v.time, v.disabled, v.toggle)
+--     end
+-- end)
