@@ -26,8 +26,14 @@ function Lib.Natives.SetBlipColor(blip, color)
     Citizen.InvokeNative(0x662D364ABF16DE2F, blip, color)
 end
 
+function Lib.Natives.SetThisScriptCanRemoveBlipsCreatedByAnyScript(bool)
+    Citizen.InvokeNative(0x8ABD939C2E5D00ED, bool)
+end
+
 function Lib.Natives.RemoveBlip(blip)
-    Citizen.InvokeNative(0xF2C3C9DA47AAA54A, blip)
+    Citizen.InvokeNative(0x8ABD939C2E5D00ED, 1)
+    --Citizen.InvokeNative(0xF2C3C9DA47AAA54A, tonumber(blip))
+    RemoveBlip(blip)
 end
 
 function Lib.Natives.SetRandomOutfitVariation(ped)

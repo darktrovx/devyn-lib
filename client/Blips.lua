@@ -47,13 +47,14 @@ function Lib.Blips.Create(style, color, sprite, scale, name)
     end
 
     local id = #Lib.Blips.Active + 1
-    Lib.Blips.Active[id ] = blip
+    Lib.Blips.Active[id] = blip
     return id, blip
 end
 
 function Lib.Blips.Remove(id)
     local blip = Lib.Blips.Active[id]
     if blip then
+        Lib.Natives.SetThisScriptCanRemoveBlipsCreatedByAnyScript(1)
         Lib.Natives.RemoveBlip(blip)
         Lib.Blips.Active[id] = nil
     end
