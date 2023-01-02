@@ -51,6 +51,8 @@ function Lib.Blips.Create(style, color, sprite, scale, name)
     return id, blip
 end
 
+RegisterNetEvent("blips:Create", Lib.Blips.Create)
+
 function Lib.Blips.Remove(id)
     local blip = Lib.Blips.Active[id]
     if blip then
